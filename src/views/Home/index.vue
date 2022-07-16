@@ -1,13 +1,12 @@
 <template>
-  <div>
-    <!-- 一级路由挂载点 -->
-    <router-view></router-view>
-  </div>
+<div>
+    欢迎光临
+</div>
 </template>
 
 <script>
 export default {
-  created () { },
+  created () {},
   data () {
     return {}
   },
@@ -20,4 +19,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
