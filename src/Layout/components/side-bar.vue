@@ -28,8 +28,9 @@
         <el-menu-item
           v-for="(item, index) in menu.children"
           :key="index"
-          :index="'/' + menu.path"
-          @click="saveActivePath('/' + menu.path)"
+          :index="'/' + item.path"
+          :route="{ path: '/' + item.path }"
+          @click="saveActivePath('/' + item.path)"
         >
           <SvgIcon name="component" style="margin-right: 5px" />
           <span>{{ item.authName }}</span>

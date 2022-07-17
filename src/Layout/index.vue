@@ -8,7 +8,7 @@
         <sideBar />
       </el-aside>
       <el-main class="main">
-        <Breadcrumb v-if="currentPath !== '/'" />
+        <Breadcrumb style="margin-bottom: 10px" />
         <router-view></router-view>
       </el-main>
     </el-container>
@@ -45,6 +45,7 @@ export default {
 <style scoped lang="scss">
 .container {
   height: 100vh;
+  overflow: visible;
 }
 .headers {
   height: 60px;
@@ -55,5 +56,6 @@ export default {
 }
 .main {
   background-color: #eaedf1;
+  height: 100vh;
 }
 </style>
