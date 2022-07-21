@@ -1,5 +1,5 @@
 import { login } from '@/api/user'
-import { setUser, getUser, removeUser } from '@/utils/auth'
+import { setUser, getUser, removeUser, setTime } from '@/utils/auth'
 const state = () => ({
   user: getUser() || {}
 })
@@ -16,6 +16,7 @@ const actions = {
     const res = await login(data)
     context.commit('setUser', res)
     setUser(res)
+    setTime(Date.now())
   },
   async logout (context) {
     context.commit('removeUser')

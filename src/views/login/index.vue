@@ -54,6 +54,7 @@ export default {
       try {
         await this.$refs.loginForm.validate()
         await this.$store.dispatch('user/login', this.loginForm)
+        this.$message.success('登录成功')
         this.$router.push('/')
       } catch (err) {
         this.$message.error('表单数据校验失败')

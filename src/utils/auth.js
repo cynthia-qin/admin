@@ -8,3 +8,10 @@ export const getUser = () => {
 export const removeUser = () => {
   return window.localStorage.removeItem(USERINFO)
 }
+const TIMESTAMP = 'timeStamp'
+export const setTime = (time) => {
+  return window.localStorage.setItem(TIMESTAMP, JSON.stringify(time))
+}
+export const getTime = () => {
+  return JSON.parse(window.localStorage.getItem(TIMESTAMP))
+}

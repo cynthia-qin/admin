@@ -16,12 +16,14 @@
               style="margin: 0 50px"
               v-if="props.row.children.length > 0"
             >
+            <!-- 一级 -->
               <el-table-column prop="authName" width="500px">
                 <template v-slot="{ row }">
                   <el-tag>{{ row.authName }}</el-tag>
                   <i class="el-icon-caret-right"></i>
                 </template>
               </el-table-column>
+              <!-- 二级 -->
               <el-table-column>
                 <template slot-scope="props">
                   <el-row
@@ -37,6 +39,7 @@
                       style="margin-right: 100px"
                     ></i>
                     <!-- <el-col></el-col> -->
+                    <!-- 三级 -->
                     <el-tag
                       v-for="item1 in item.children"
                       :key="item1.id"

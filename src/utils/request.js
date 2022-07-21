@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
 import store from '@/store'
+import { getTime } from '@/utils/auth'
+import router from '@/router'
 const request = axios.create({
   baseURL: 'http://liufusong.top:8899/api/private/v1/',
   timeout: 5000
@@ -9,6 +11,13 @@ const request = axios.create({
 request.interceptors.request.use((config) => {
   const token = store.state.user.user.token
   if (store.state.user.user && token) {
+    const time = Date.now() - getTime() - 0
+    const maxTime = 2 * 60 * 60 * 1000
+    if (time > maxTime) {
+      Message.error('登录过期')
+      store.dispatch('user/logout')
+      router.push('/login')
+    }
     config.headers.Authorization = token
   }
   return config

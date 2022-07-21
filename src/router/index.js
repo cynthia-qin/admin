@@ -85,6 +85,14 @@ const routes = [
         meta: {
           title: '商品列表'
         }
+      },
+      {
+        path: 'add',
+        name: 'addGoods',
+        component: () => import('@/views/addGoods'),
+        meta: {
+          title: '添加商品'
+        }
       }
     ]
   },
@@ -118,6 +126,40 @@ const routes = [
         component: () => import('@/views/categories'),
         meta: {
           title: '商品分类'
+        }
+      }
+    ]
+  },
+  {
+    path: '/orders',
+    name: 'orders',
+    component: Layout,
+    meta: {
+      title: '订单管理'
+    },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/orders'),
+        meta: {
+          title: '订单列表'
+        }
+      }
+    ]
+  },
+  {
+    path: '/reports',
+    name: 'reports',
+    component: Layout,
+    meta: {
+      title: '数据统计'
+    },
+    children: [
+      {
+        path: '',
+        component: () => import('@/views/reports'),
+        meta: {
+          title: '数据报表'
         }
       }
     ]
