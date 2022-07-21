@@ -87,4 +87,7 @@ export default {
   width: 200px;
   // min-height: 400px;
 }
+:deep(.el-button) {
+  border-radius: 0px;
+}
 </style>
